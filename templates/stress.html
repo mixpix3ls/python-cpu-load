@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+  <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    {% if keepstressing == False %}
+        {{ hostname }} is not being stressed. <a href="/start_stress">Stress it!</a>
+    {% else %}
+        {{ hostname }} is being stressed. <a href="/stop_stress">Stop the stress!</a>
+    {% endif %}
+{% endblock %}

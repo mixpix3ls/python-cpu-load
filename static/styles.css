@@ -1,0 +1,14 @@
+html {
+  margin:    0 auto;
+  max-width: 600px;
+  background: white
+}
+
+body {
+  font-size: 14px;
+}
+
+.header {
+text-align: center;
+font-size: 20px;
+}

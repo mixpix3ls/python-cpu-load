@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Immutable Infrastructure Lab" />
+    {% block css %}{% endblock %}
+    <title>Immutable Infrastructure Lab</title>
+  </head>
+  <body>
+    <div class="header">
+      <image src="{{ url_for('static', filename='WWT_Logo_RGB_Color.png') }}" width="85%">
+      <h1>Immutable Infrastructure Lab</h1>
+    </div>
+    <div>
+      <h1>Module 3</h1>
+      <p>{% block content %}{% endblock %}</p>
+    </div>
+  </body>
+</html>
