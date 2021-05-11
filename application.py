@@ -28,23 +28,20 @@ def stresserthread():
 stresser_thread = threading.Thread(target=stresserthread, args=())
 stresser_thread.start()
 
-application = Flask(__name__)
+app = Flask(__name__)
 
-@application.route("/")
+@app.route("/")
 def root():
     return render_template('stress.html', hostname=hostname, keepstressing=keepstressing)
 
-@application.route("/start_stress")
+@app.route("/start_stress")
 def start_stress():
     global keepstressing
     keepstressing = True
     return redirect(url_for('root'))
 
-@application.route("/stop_stress")
+@app.route("/stop_stress")
 def stop_stress():
     global keepstressing
     keepstressing = False
     return redirect(url_for('root'))
-
-if __name__ == "__main__":
-    application.run(host='0.0.0.0', port = 8080)
