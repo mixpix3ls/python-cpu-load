@@ -5,6 +5,7 @@ import threading
 import time
 import requests
 
+app = Flask(__name__)
 
 headers = {
      'Metadata': 'true',
@@ -28,7 +29,7 @@ def stresserthread():
 stresser_thread = threading.Thread(target=stresserthread, args=())
 stresser_thread.start()
 
-app = Flask(__name__)
+
 
 @app.route("/")
 def root():
@@ -45,3 +46,6 @@ def stop_stress():
     global keepstressing
     keepstressing = False
     return redirect(url_for('root'))
+
+if __name__ == "__main__":
+    app.run()
